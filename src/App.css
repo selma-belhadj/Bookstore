@@ -1,39 +1,74 @@
-.App {
-  text-align: center;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  margin-left: auto;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar h1 {
+  color: #000;
+  font-size: 24px;
+}
+
+.links {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.linklist {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.linklist:hover {
+  color: #5c3803;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.Bookslist {
+  width: 100%;
+  list-style-type: none;
+}
+
+.Bookslist li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.Booksform {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 40%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.Booksform input,
+.Booksform button {
+  margin-bottom: 10px;
+  margin-left: 30px;
 }
