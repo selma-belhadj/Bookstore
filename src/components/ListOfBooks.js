@@ -1,28 +1,32 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeBook } from '../redux/books/Books';
 
-const ListOfBooks = () => (
-  <div>
-    <ul className="Bookslist">
-      <li>
-        <span>Book 1 </span>
-        <span>Author 1 </span>
-        <span>66% </span>
-        <button type="button">Remove</button>
-      </li>
-      <li>
-        <span>Book 2 </span>
-        <span>Author 2 </span>
-        <span>96% </span>
-        <button type="button">Remove</button>
-      </li>
-      <li>
-        <span>Book 3 </span>
-        <span>Author 3 </span>
-        <span>56% </span>
-        <button type="button">Remove</button>
-      </li>
-    </ul>
-  </div>
-);
+const ListOfBooks = () => {
+  const books = useSelector((state) => state.booksReducer);
+  const dispatch = useDispatch();
+  const deleteBookFromStore = (id) => {
+    dispatch(removeBook(id));
+  };
+  return (
+    <div>
+      <ul className="Bookslist">
+        {books.map(({ id, title, author }) => (
+          <li key={id}>
+            <span>
+              {title}
+              {' '}
+            </span>
+            <span>
+              {author}
+              {' '}
+            </span>
+            <button type="button" onClick={() => deleteBookFromStore(id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default ListOfBooks;

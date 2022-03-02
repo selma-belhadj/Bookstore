@@ -63,8 +63,8 @@ body {
 
 .Booksform {
   display: flex;
-  flex-direction: column;
-  width: 40%;
+  flex-direction: row;
+  width: 100%;
 }
 
 .Booksform input,
