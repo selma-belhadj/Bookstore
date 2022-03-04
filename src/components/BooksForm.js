@@ -1,27 +1,41 @@
+/* eslint-disable camelcase */
+
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/Books';
+import { postBook } from '../redux/books/Books';
 
 const BooksForm = () => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [titleState, setTitle] = useState('');
+  const [categoryState, setCategory] = useState('');
   const submitBookToStore = () => {
-    const id = uuidv4();
+    const item_id = uuidv4();
+    const title = titleState;
+    const category = categoryState;
     const newBook = {
-      id,
+      item_id,
       title,
-      author,
+      category,
     };
-    dispatch(addBook(newBook));
+    dispatch(postBook(newBook));
+  };
+  const submitCategorie = (e) => {
+    setCategory(e);
   };
 
   return (
-    <div>
+    <div className="form">
+      <h3>ADD NEW BOOK</h3>
       <form action="submit" className="Booksform">
         <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Enter book name" />
-        <input onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Enter author name" />
+        <select onChange={(e) => submitCategorie(e.target.value)} type="text">
+          <option value="">Select</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Romance">Romance</option>
+          <option value="Action">Action</option>
+          <option value="Classics">Classics</option>
+        </select>
         <button type="button" onClick={submitBookToStore}>Add Book</button>
       </form>
     </div>
