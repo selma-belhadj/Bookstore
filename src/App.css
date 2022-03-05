@@ -1,45 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 
 *,
 *::before,
 *::after {
+  padding: 0;
   box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
-  margin: 0;
+  font-family: 'Roboto Slab', sans-serif;
+  background-color: #f5f6fa;
 }
 
+button {
+  font-family: 'Roboto Slab', sans-serif;
+  padding: 0.5rem 1rem;
+  background-color: #0290ff;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* navbar */
 .navbar {
-  padding: 20px;
   display: flex;
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #e8e8e8;
   margin-left: auto;
-  margin-bottom: 20px;
+  margin-bottom: 2.5rem;
+  background-color: #ffff;
+  padding: 0 5rem;
 }
 
 .navbar h1 {
-  color: #000;
-  font-size: 24px;
-}
-
-.links {
-  margin-left: auto;
+  color: #0290ff;
+  font-size: 1.875rem;
+  font-weight: bold;
   margin-right: 50px;
 }
 
-.linklist {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-  color: #000;
-  font-size: 1.2rem;
+.links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #888;
+  list-style-type: none;
 }
 
-.linklist:hover {
-  color: #5c3803;
+.linklist .active {
+  color: #81d4fa;
+}
+
+.icon-div {
+  position: absolute;
+  right: 0;
+  color: #0290ff;
+  border: #e2e2e2 solid 1px;
+  border-radius: 50% 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
 }
 
 .categories {
@@ -48,27 +95,138 @@ body {
   margin-top: 100px;
 }
 
-.Bookslist {
-  width: 100%;
-  list-style-type: none;
+/* Form */
+.form {
+  margin: 5%;
+  border-top: 2px #e8e8e8 solid;
+  margin-top: 1rem;
+  padding: 1rem 0;
 }
 
-.Bookslist li {
+.form h3 {
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+.form form {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form input {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.form select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  color: #888;
+  border-radius: 3px;
+}
+
+.form button {
+  width: 400px;
+  max-width: 100%;
+}
+
+/* list of Books */
+.card {
+  display: flex;
   justify-content: space-between;
-  width: 50%;
-  margin-bottom: 20px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1rem;
+  padding-left: 2rem;
+  border: 1px solid #e8e8e8;
+  font-size: 0.875rem;
 }
 
-.Booksform {
+.book-container {
+  padding: 1rem 3rem;
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.Booksform input,
-.Booksform button {
-  margin-bottom: 10px;
-  margin-left: 30px;
+.title {
+  font-size: 1.375rem;
+}
+
+.category {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.actions {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.actions button {
+  background-color: transparent;
+  color: #0290ff;
+  padding: 0;
+  font-weight: normal;
+}
+
+.vertical-separator {
+  height: 1.5rem;
+  width: 2px;
+  background-color: #e8e8e8;
+  margin: 0 10px;
+}
+
+.chapter button {
+  color: #e8e8e8;
+  font-weight: normal;
+}
+
+.actions button:hover,
+.actions button:active {
+  text-decoration: underline;
+  transform: unset;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-progress-bar {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 0.7rem;
+}
+
+.count {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.count p {
+  font-size: 2rem;
+}
+
+.chapter {
+  padding: 0 4rem 0 1.5rem;
+  border-left: 2px #e8e8e8 solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chapter p {
+  margin-bottom: 0.5rem;
 }

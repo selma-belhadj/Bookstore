@@ -5,8 +5,8 @@ import ListOfBooks from '../components/ListOfBooks';
 const Books = () => (
   <div>
     <Header />
-    <BooksForm />
     <ListOfBooks />
+    <BooksForm />
   </div>
 );
 export default Books;
