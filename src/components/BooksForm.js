@@ -30,11 +30,15 @@ const BooksForm = () => {
       <form action="submit" className="Booksform">
         <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Enter book name" />
         <select onChange={(e) => submitCategorie(e.target.value)} type="text">
-          <option value="">Select</option>
-          <option value="Fiction">Fiction</option>
+          <option value="" disabled>
+            Category
+          </option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Adventure">Adventure</option>
           <option value="Romance">Romance</option>
-          <option value="Action">Action</option>
-          <option value="Classics">Classics</option>
+          <option value="Detective & Mystery">Detective & Mystery</option>
+          <option value="Horror">Horror</option>
+          <option value="Thriller">Thriller</option>
         </select>
         <button type="button" onClick={submitBookToStore}>Add Book</button>
       </form>
