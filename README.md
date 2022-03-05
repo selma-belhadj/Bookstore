@@ -15,7 +15,7 @@
 
 ## Live Demo 
 
-[Live Demo Link](selmab-react-template.netlify.app)
+[Live Demo Link](https://selmabelhadj-bookstore.netlify.app/)
 
 
 ## Getting Started
