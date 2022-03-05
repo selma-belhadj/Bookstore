@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { fetchBooks, deleteBook } from '../redux/books/Books';
+import { deleteBook } from '../redux/books/Books';
 
 const ListOfBooks = () => {
   const dispatch = useDispatch();
-  useEffect(() => dispatch(fetchBooks()), []);
   const books = useSelector((state) => state.books);
   const percentage = Math.floor(Math.random() * 90);
   const BooksSet = books.book.map((book) => (
